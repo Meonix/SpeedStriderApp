@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">BaseComposeApplication</string>
+    <string name="no_internet_connection_please_check">no internet connection !</string>
+    <string name="something_went_wrong_please_try_later">somthing went wrong please try  it later</string>
+    <string name="api_not_found">source not found 404!</string>
+</resources>
