@@ -159,4 +159,8 @@ dependencies {
 
     implementation(libs.coil.compose)
     implementation(libs.coil.gif)
+
+    //Map
+    implementation(libs.android)
+    implementation(libs.maps.compose)
 }

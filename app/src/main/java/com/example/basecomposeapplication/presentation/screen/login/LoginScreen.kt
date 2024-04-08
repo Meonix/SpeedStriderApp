@@ -12,7 +12,6 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.ScaffoldState
 import androidx.compose.material.SnackbarHost
 import androidx.compose.material.rememberScaffoldState
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -31,7 +30,12 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.basecomposeapplication.presentation.base.widget.BaseScreen
+import com.mapbox.geojson.Point
+import com.mapbox.maps.MapboxExperimental
+import com.mapbox.maps.extension.compose.MapboxMap
+import com.mapbox.maps.extension.compose.animation.viewport.MapViewportState
 
+@OptIn(MapboxExperimental::class)
 @Composable
 fun LoginScreen(
     modifier: Modifier = Modifier,
@@ -80,17 +84,17 @@ fun LoginScreen(
                     onEmailChange = onEmailChange,
                     onPasswordChange = onPasswordChange
                 )
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                Button(
-                    onClick = {
-                        viewModel.login()
-                        focusManager.clearFocus()
-                    }
-                ) {
-                    Text("Login")
-                }
+//                MapboxMap(
+//                    Modifier.fillMaxSize(),
+//                    mapViewportState = MapViewportState().apply {
+//                        setCameraOptions {
+//                            zoom(2.0)
+//                            center(Point.fromLngLat(-98.0, 39.5))
+//                            pitch(0.0)
+//                            bearing(0.0)
+//                        }
+//                    },
+//                )
             }
         }
     }

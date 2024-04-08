@@ -1,4 +1,5 @@
 [versions]
+android = "11.2.2"
 coreKtx = "1.10.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -23,6 +24,7 @@ kotlinx-coroutines = "1.6.4"
 # jetpack
 activityCompose = "1.7.0"
 composeBom = "2023.08.00"
+mapsCompose = "11.2.2"
 room = "2.6.0"
 paging = "3.2.1"
 
@@ -85,6 +87,7 @@ versionCode = "2"
 versionName = "1.0.2"
 appcompat = "1.6.1"
 [libraries]
+android = { module = "com.mapbox.maps:android", version.ref = "android" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -118,6 +121,7 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
 
+maps-compose = { module = "com.mapbox.extension:maps-compose", version.ref = "mapsCompose" }
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 
 dimension-sdp = { module = "com.intuit.sdp:sdp-android", version.ref = "intuit" }
