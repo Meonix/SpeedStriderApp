@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import com.example.basecomposeapplication.presentation.navigation.DestinationsArgs.USER_INFO_ARG
 import com.example.basecomposeapplication.presentation.navigation.Screens.HOME_SCREEN
 import com.example.basecomposeapplication.presentation.navigation.Screens.LOGIN_SCREEN
+import com.example.basecomposeapplication.presentation.navigation.Screens.MAP_SCREEN
 
 /**
  * Screens used in [Destinations]
@@ -13,6 +14,7 @@ private object Screens {
     const val LOGIN_SCREEN = "login"
     const val HOME_SCREEN = "main"
     const val REGISTER_SCREEN = "register"
+    const val MAP_SCREEN = "map"
 }
 
 /**
@@ -30,6 +32,7 @@ object Destinations {
 
     //    const val HOME_ROUTE = "$HOME_SCREEN/{$USER_INFO_ARG}"
     const val HOME_ROUTE = "$HOME_SCREEN?$USER_INFO_ARG={$USER_INFO_ARG}"
+    const val MAP_ROUTE = MAP_SCREEN
 }
 
 

@@ -24,7 +24,7 @@ kotlinx-coroutines = "1.6.4"
 # jetpack
 activityCompose = "1.7.0"
 composeBom = "2023.08.00"
-mapsCompose = "11.2.2"
+mapsCompose = "11.3.0-rc.1"
 room = "2.6.0"
 paging = "3.2.1"
 
@@ -76,7 +76,7 @@ appPlugins = "8.1.2"
 kotlinPlugins = "1.8.20"
 libPlugins = "8.1.2"
 kspPlugins = "1.9.22-1.0.18"
-androidGradlePlugin = "8.3.0"
+androidGradlePlugin = "8.2.2"
 kotlin = "1.9.0"
 
 #config SDK version build

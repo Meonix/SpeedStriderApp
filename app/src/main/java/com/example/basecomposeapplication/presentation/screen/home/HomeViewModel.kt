@@ -1,5 +1,6 @@
 package com.example.basecomposeapplication.presentation.screen.home
 
+import com.example.basecomposeapplication.presentation.base.viewmodel.BaseIntent
 import com.example.basecomposeapplication.presentation.base.viewmodel.BaseViewModelImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.StateFlow
@@ -11,6 +12,9 @@ class HomeViewModel @Inject constructor(
 
 ) : BaseViewModelImpl<HomeUIState>(HomeUIState()) {
     override val uiState: StateFlow<HomeUIState> = _uiState.asStateFlow()
+    override fun processEvent(intent: BaseIntent) {
+
+    }
 
     fun updateToken(token: String) {
         _uiState.value = _uiState.value.copy(

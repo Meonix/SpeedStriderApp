@@ -3,4 +3,5 @@
     <string name="no_internet_connection_please_check">no internet connection !</string>
     <string name="something_went_wrong_please_try_later">somthing went wrong please try  it later</string>
     <string name="api_not_found">source not found 404!</string>
+    <string name="mapbox_access_token">pk.eyJ1Ijoia2Fpbm92YTE5OTkiLCJhIjoiY2tzaXBjMG42MjZhdTJ0cm9nNTRjeHVpMiJ9.G756yw05v_Sc0d9OkoiI1g</string>
 </resources>
