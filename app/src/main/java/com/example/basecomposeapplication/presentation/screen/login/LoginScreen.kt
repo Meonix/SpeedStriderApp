@@ -30,10 +30,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.basecomposeapplication.presentation.base.widget.BaseScreen
-import com.mapbox.geojson.Point
+import com.example.basecomposeapplication.presentation.screen.map.MapUIState
 import com.mapbox.maps.MapboxExperimental
-import com.mapbox.maps.extension.compose.MapboxMap
-import com.mapbox.maps.extension.compose.animation.viewport.MapViewportState
 
 @OptIn(MapboxExperimental::class)
 @Composable

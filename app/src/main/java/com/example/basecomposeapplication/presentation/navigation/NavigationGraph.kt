@@ -14,6 +14,7 @@ import androidx.navigation.navArgument
 import com.example.basecomposeapplication.presentation.navigation.DestinationsArgs.USER_INFO_ARG
 import com.example.basecomposeapplication.presentation.screen.home.HomeScreen
 import com.example.basecomposeapplication.presentation.screen.login.LoginScreen
+import com.example.basecomposeapplication.presentation.screen.login.MapScreen
 import kotlinx.coroutines.CoroutineScope
 
 @Composable
@@ -21,7 +22,7 @@ fun NavGraph(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
-    startDestination: String = Destinations.LOGIN_ROUTE,
+    startDestination: String = Destinations.MAP_ROUTE,
     navActions: NavigationActions = remember(navController) {
         NavigationActions(navController)
     }
@@ -52,6 +53,11 @@ fun NavGraph(
                     navActions.navigateToHome(userInfo = result)
                 }
             )
+        }
+        customComposable(
+            route = Destinations.MAP_ROUTE,
+        ) {
+            MapScreen()
         }
     }
 }

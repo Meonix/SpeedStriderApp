@@ -3,8 +3,10 @@ package com.example.basecomposeapplication.presentation.screen.login
 import androidx.lifecycle.viewModelScope
 import com.example.basecomposeapplication.data.local.datastore.Pref
 import com.example.basecomposeapplication.domain.usecase.test.TestUseCase
+import com.example.basecomposeapplication.presentation.base.viewmodel.BaseIntent
 import com.example.basecomposeapplication.presentation.base.viewmodel.BaseViewModelImpl
 import com.example.basecomposeapplication.presentation.error.AppErrorHandler
+import com.example.basecomposeapplication.presentation.screen.map.MapUIState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -20,6 +22,9 @@ class LoginViewModel @Inject constructor(
 ) : BaseViewModelImpl<LoginUIState>(LoginUIState()) {
 
     override val uiState: StateFlow<LoginUIState> = _uiState.asStateFlow()
+    override fun processEvent(intent: BaseIntent) {
+
+    }
 
     fun clearError() {
         _uiState.update {

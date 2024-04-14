@@ -148,6 +148,7 @@ dependencies {
     implementation(libs.google.accompanist.swiperefresh)
     implementation(libs.google.accompanist.systemuicontroller)
     implementation(libs.google.accompanist.flowlayout)
+    implementation(libs.accompanist.permissions)
     implementation(libs.google.location)
 
     implementation(libs.camera.core)
