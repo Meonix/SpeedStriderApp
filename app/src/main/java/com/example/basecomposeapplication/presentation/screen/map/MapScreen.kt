@@ -24,6 +24,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.basecomposeapplication.presentation.base.widget.BaseScreen
 import com.example.basecomposeapplication.presentation.screen.map.MapViewModel
+import com.example.basecomposeapplication.presentation.screen.map.component.LayoutAction
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberMultiplePermissionsState
 import com.mapbox.geojson.Point
@@ -74,16 +75,19 @@ fun MapScreen(
                 .fillMaxSize()
         ) { paddingValues ->
 
-            Column(
-                modifier = modifier
-                    .fillMaxSize()
-                    .padding(paddingValues),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                if (locationPermissionState.allPermissionsGranted) {
+
+            if (locationPermissionState.allPermissionsGranted) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(paddingValues),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
                     MapboxMap(
-                        modifier = Modifier.fillMaxSize(),
+                        modifier = Modifier
+                            .weight(2f)
+                            .fillMaxSize(),
                         logo = {},
                         compass = { },
                         scaleBar = { },
@@ -96,30 +100,35 @@ fun MapScreen(
                             }
                         })
                     }
-                } else {
-                    Column(
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(16.dp)
-                    ) {
-                        Text(
-                            text = "Screen need have permission location for tracking location",
-                            textAlign = TextAlign.Center
-                        )
-                        Spacer(modifier = Modifier.height(16.dp))
-                        Button(onClick = {
-                            val i = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                            val uri = Uri.fromParts("package", context.packageName, null)
-                            i.data = uri
-                            context.startActivity(i)
-                        }) {
-                            Text(text = "Setting")
-                        }
+
+                    LayoutAction(modifier = Modifier
+                        .weight(1f)
+                        .fillMaxSize())
+                }
+            } else {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(16.dp)
+                ) {
+                    Text(
+                        text = "Screen need have permission location for tracking location",
+                        textAlign = TextAlign.Center
+                    )
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Button(onClick = {
+                        val i = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                        val uri = Uri.fromParts("package", context.packageName, null)
+                        i.data = uri
+                        context.startActivity(i)
+                    }) {
+                        Text(text = "Setting")
                     }
                 }
             }
         }
     }
 }
+
