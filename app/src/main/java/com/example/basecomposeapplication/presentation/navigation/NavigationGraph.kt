@@ -1,26 +1,38 @@
 package com.example.basecomposeapplication.presentation.navigation
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.TrendingUp
 import androidx.compose.material.icons.automirrored.outlined.TrendingUp
+import androidx.compose.material.icons.filled.CameraAlt
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.InsertChart
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.InsertChartOutlined
 import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material3.Scaffold
+import androidx.compose.material.FabPosition
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+import androidx.core.graphics.toColorInt
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.basecomposeapplication.R
 import com.example.basecomposeapplication.presentation.screen.login.LoginScreen
 import com.example.basecomposeapplication.presentation.screen.login.MapScreen
 import com.example.basecomposeapplication.presentation.screen.tab.component.TabView
@@ -54,10 +66,25 @@ fun NavGraph(
 
     val shouldShowBottomBar: Boolean = currentRoute in bottomBarRoutes
 
-    Scaffold(bottomBar = {
-        if (shouldShowBottomBar)
-            TabView(tabBarItems, navController)
-    }) {
+    Scaffold(
+        floatingActionButtonPosition = FabPosition.Center,
+        isFloatingActionButtonDocked = true,
+        floatingActionButton = {
+            FloatingActionButton(
+                shape = CircleShape,
+                onClick = {
+
+                },
+                contentColor = Color.White,
+                containerColor = Color("#0098FF".toColorInt())
+            ) {
+                Image(painter = painterResource(id = R.drawable.ic_run), contentDescription = "Add icon", modifier = Modifier.size(36.dp))
+            }
+        },
+        bottomBar = {
+            if (shouldShowBottomBar)
+                TabView(tabBarItems, navController)
+        }) {
         NavHost(
             navController = navController,
             startDestination = startDestination,

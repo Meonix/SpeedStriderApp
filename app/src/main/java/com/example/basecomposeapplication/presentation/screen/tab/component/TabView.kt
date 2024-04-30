@@ -20,7 +20,9 @@ fun TabView(tabBarItems: List<TabBarItem>, navController: NavController) {
         mutableStateOf(0)
     }
 
-    NavigationBar {
+    NavigationBar(
+        containerColor = Color.White,
+    ) {
         // looping over each tab to generate the views and navigation for each item
         tabBarItems.forEachIndexed { index, tabBarItem ->
             NavigationBarItem(
