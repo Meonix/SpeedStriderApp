@@ -1,4 +1,4 @@
-package com.example.basecomposeapplication.presentation.screen.main
+package com.example.basecomposeapplication.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
